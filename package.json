@@ -1,0 +1,22 @@
+{
+  "name": "xmltool-electron",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron main.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.0.0-alpha.5",
+    "encoding": "^0.1.12",
+    "jsdom": "^9.9.1",
+    "request": "^2.79.0",
+    "xmldom": "^0.1.27"
+  },
+  "devDependencies": {
+    "bootstrap": "^4.0.0-alpha.5",
+    "electron-prebuilt": "^1.4.13"
+  }
+}
