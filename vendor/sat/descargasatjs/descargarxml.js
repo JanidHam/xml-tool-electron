@@ -1,7 +1,7 @@
 const jsdom = require("jsdom");
 const encoding = require("encoding");
 
-export default class DescargarXML {
+class DescargarXML {
     
     constructor(sesion, htmlSource, direccionDescarga) {
         this.sesion = sesion
@@ -36,3 +36,5 @@ export default class DescargarXML {
         console.log(pathDescarga)
     }
 }
+
+module.exports = DescargarXML;

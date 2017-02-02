@@ -9,11 +9,22 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bootstrap": "^4.0.0-alpha.5",
+    "bluebird": "^3.4.7",
+    "bootstrap": "^4.0.0-alpha.6",
+    "cheerio": "^0.22.0",
+    "co": "^4.6.0",
+    "co-request": "^1.0.0",
     "encoding": "^0.1.12",
+    "html-parser": "^0.10.0",
+    "htmlparser": "^1.7.7",
     "jsdom": "^9.9.1",
     "request": "^2.79.0",
-    "xmldom": "^0.1.27"
+    "request-promise": "^4.1.1",
+    "simplexml": "0.0.3",
+    "superagent": "^3.4.1",
+    "sync-request": "^4.0.1",
+    "xmldom": "^0.1.27",
+    "xpath.js": "^1.0.7"
   },
   "devDependencies": {
     "bootstrap": "^4.0.0-alpha.5",

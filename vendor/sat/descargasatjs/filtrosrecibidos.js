@@ -1,4 +1,4 @@
-export default class FiltrosRecibidos {
+class FiltrosRecibidos {
   constructor() {
     this.annio = "2015"
     this.mes = "1"
@@ -76,3 +76,5 @@ export default class FiltrosRecibidos {
   }
 
 }
+
+module.exports = FiltrosRecibidos;

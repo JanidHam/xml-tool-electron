@@ -1,7 +1,10 @@
 const jsdom = require("jsdom");
 const encoding = require("encoding");
+const select = require('xpath.js')
+const dom = require('xmldom').DOMParser
+const cheerio = require('cheerio')
 
-export default class HTMLForm {
+class HTMLForm {
   
   constructor(htmlSource, xpathForm) {
     this.xpathForm = xpathForm
@@ -26,10 +29,19 @@ export default class HTMLForm {
   }
 
   readAndGetValues(element) {
-    let dom = jsdom.jsdom(this.htmlSource)
+    
+    var xml = this.htmlSource
+    var doc = new dom().parseFromString(xml, "text/xml") 
 
-    console.log(dom)
+    var inputValues = []// = select(doc, `//${this.xpathForm}/${element}`)
 
-    return []
+    for (let input of select(doc, `//${this.xpathForm}/${element}`)) {
+      input = cheerio.load(input.toString())
+      inputValues[input(element).attr('name')] = input(element).attr('value')
+    }
+
+    return inputValues
   }
 }
+
+module.exports = HTMLForm;

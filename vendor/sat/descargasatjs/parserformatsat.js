@@ -1,4 +1,4 @@
-export default class ParserFormatSAT {
+class ParserFormatSAT {
   
   constructor(fuente) {
     this.fuente = fuente
@@ -36,3 +36,5 @@ export default class ParserFormatSAT {
     return this.items
   }
 }
+
+module.exports = ParserFormatSAT;
