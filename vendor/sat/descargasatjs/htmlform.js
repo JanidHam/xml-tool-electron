@@ -16,7 +16,7 @@ class HTMLForm {
     let inputValues = this.readInputValues()
     let selectValues = this.readSelectValues()
 
-    let values = [].concat(inputValues, selectValues)
+    let values = Object.assign(inputValues, selectValues)
     return values
   }
 
@@ -33,11 +33,16 @@ class HTMLForm {
     var xml = this.htmlSource
     var doc = new dom().parseFromString(xml, "text/xml") 
 
-    var inputValues = []// = select(doc, `//${this.xpathForm}/${element}`)
-
+    var inputValues = {}// = select(doc, `//${this.xpathForm}/${element}`)
+    let obj = {}
     for (let input of select(doc, `//${this.xpathForm}/${element}`)) {
       input = cheerio.load(input.toString())
-      inputValues[input(element).attr('name')] = input(element).attr('value')
+      let name = input(element).attr('name')
+      let value = input(element).attr('value')
+      obj[name] = value
+      Object.assign(inputValues, obj)
+      //inputValues.push({ name: name, value: value })
+      // inputValues[input(element).attr('name')] = input(element).attr('value')
     }
 
     return inputValues

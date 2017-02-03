@@ -250,7 +250,7 @@ class PortalCfdi {
   logueoDeUsuarioConCIEC() {
     let $this = this
 
-    co(function *(){
+    return co(function *(){
       try {
         yield $this.entrarAlaPaginaInicio()
         yield $this.enviarFormularioConCIEC()
@@ -312,29 +312,29 @@ class PortalCfdi {
       }
     }).catch(onerror);
 
-    try {
-      this.logueoDeUsuarioConCIEC()
-      // let htmlRespuesta
-      // let nombre
-      // if (filtros.folioFiscal != '') {
-      //   htmlRespuesta = this.consultaReceptorFolio(filtros)
-      //   nombre = filtros.folioFiscal
-      // } else {
-      //   htmlRespuesta = this.consultaReceptorFecha(filtros)
-      //   nombre = ''
-      // }
+    // try {
+    //   this.logueoDeUsuarioConCIEC()
+    //   // let htmlRespuesta
+    //   // let nombre
+    //   // if (filtros.folioFiscal != '') {
+    //   //   htmlRespuesta = this.consultaReceptorFolio(filtros)
+    //   //   nombre = filtros.folioFiscal
+    //   // } else {
+    //   //   htmlRespuesta = this.consultaReceptorFecha(filtros)
+    //   //   nombre = ''
+    //   // }
 
-      // let xml = new DescargarXML(this.sesion, htmlRespuesta, directorioAGuardar)
-      // xml.obtenerEnlacesYDescargar(nombre)
-      // this.listaDocumentos = xml.obtenerListaDeDocumentosDescargados()
-      // this.listaArchsDocumentos = xml.obtenerListaArchsDeDocumentosDescargados()
-      return true      
-    }
-    catch (ex) {
-      console.log(ex)
-      this.error = ex
-      return false
-    }
+    //   // let xml = new DescargarXML(this.sesion, htmlRespuesta, directorioAGuardar)
+    //   // xml.obtenerEnlacesYDescargar(nombre)
+    //   // this.listaDocumentos = xml.obtenerListaDeDocumentosDescargados()
+    //   // this.listaArchsDocumentos = xml.obtenerListaArchsDeDocumentosDescargados()
+    //   return true      
+    // }
+    // catch (ex) {
+    //   console.log(ex)
+    //   this.error = ex
+    //   return false
+    // }
   }
 
   entrarConsultaReceptor(filtros) {
